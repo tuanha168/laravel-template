@@ -44,6 +44,11 @@ services:
       - ${DOCKER_MYSQL_EXTERNAL_PORT-3309}:3306
     command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]
 
+  redis:
+    image: redis:5.0.6
+    ports:
+      - ${DOCKER_REDIS_EXTERNAL_PORT-6379}:6379
+
 volumes:
   mysqldata:
     driver: local
